@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<persons>
+<persons xmlns="http://www.w3schools.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.w3schools.com persons.xsd">
   <person>
     <name>Minonne Clemente</name>
     <shortname>mino</shortname>
@@ -22,6 +22,6 @@
     <name>Judith Studer</name>
     <shortname>stuj</shortname>
     <email>stuj@zhaw.ch</email>
-    <website>https://www.xing.com/profile/Judith_Studer</website>
+    <website>asdf</website>
   </person>
 </persons>
