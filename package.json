@@ -1,0 +1,23 @@
+{
+  "name": "dbC_Project_1",
+  "version": "0.1.0",
+  "description": "XML, XSD and XSLT/XPath exercise at FHNW",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "fhnw",
+    "xml",
+    "xsd",
+    "xslt",
+    "xpath",
+    "jade"
+  ],
+  "author": "Simon Schmid",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.8",
+    "gulp-jade": "^0.8.0"
+  }
+}
