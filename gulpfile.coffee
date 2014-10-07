@@ -6,13 +6,13 @@ libxml   = require 'libxmljs'
 
 
 gulp.task 'jade', ->
-	gulp.src './src/*.jade'
+	return gulp.src './src/*.jade'
 		.pipe jade({pretty: true})
 		.pipe rename (path) ->
 			path.extname = ''
 		.pipe gulp.dest './build/'
 
-gulp.task 'xsd', ->
+gulp.task 'xsd', ['jade'], ->
 	fs.readFile './build/persons.xml', (err, data) ->
 		xml = libxml.parseXml data.toString()
 

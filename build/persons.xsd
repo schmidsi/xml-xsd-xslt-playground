@@ -5,12 +5,22 @@
       <xs:sequence>
         <xs:element name="person" maxOccurs="unbounded">
           <xs:complexType>
-            <xs:sequence>
+            <xs:all>
+              <xs:simpleType name="shortname">
+                <xs:restriction base="xs:string">
+                  <xs:pattern value="[a-z]{4}"></xs:pattern>
+                </xs:restriction>
+              </xs:simpleType>
+              <xs:element name="email">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:pattern value="[^@]+@[^.]+..+"></xs:pattern>
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="name" type="xs:string"></xs:element>
-              <xs:element name="shortname" type="xs:string"></xs:element>
-              <xs:element name="email" type="xs:string"></xs:element>
               <xs:element name="website" type="xs:anyURI"></xs:element>
-            </xs:sequence>
+            </xs:all>
           </xs:complexType>
         </xs:element>
       </xs:sequence>
