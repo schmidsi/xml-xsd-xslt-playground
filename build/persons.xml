@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<persons>
+  <person>
+    <name>Minonne Clemente</name>
+    <shortname>mino</shortname>
+    <email>Clemente.Minonne@iProcess.ch</email>
+    <website>https://www.xing.com/profile/Clemente_Minonne</website>
+  </person>
+  <person>
+    <name>Alexandre de Spindler</name>
+    <shortname>desa</shortname>
+    <email>alexandre.despindler@fhnw.ch</email>
+    <website>https://www.linkedin.com/pub/alexandre-de-spindler/3/6a5/b32</website>
+  </person>
+  <person>
+    <name>Thomas Keller</name>
+    <shortname>kell</shortname>
+    <email>th.kellerzhaw.ch</email>
+    <website>http://www.zhaw.ch/fileadmin/php_includes/popup/person-detail.php?kurzz=kell</website>
+  </person>
+  <person>
+    <name>Judith Studer</name>
+    <shortname>stuj</shortname>
+    <email>stuj@zhaw.ch</email>
+    <website>https://www.xing.com/profile/Judith_Studer</website>
+  </person>
+</persons>
