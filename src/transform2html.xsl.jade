@@ -1,47 +1,60 @@
 doctype xml
 xsl:stylesheet(
-	version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
+    version="1.0"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
 
-	xsl:template(match="/")
-		html
-			head
-				title dbC Projekt 1 Personen - Simon Schmid
-				link(href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css')
-				style
-					:stylus
-						html
-							font-family: 'Lato', sans-serif
-							font-weight: 300
+    xsl:template(match="/")
+        html
+            head
+                title dbC Projekt 1 Personen - Simon Schmid
+                link(href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css')
+                style
+                    :stylus
+                        html
+                            font-family: 'Lato', sans-serif
+                            font-weight: 300
 
-						h1
-							font-weight: 300
-						.person
-							margin-bottom: 2em
-						.portrait
-							height: 50px
-							width: 50px
-							display: inline-block
-							background-size: cover
-							border-radius: 50px
-							float: left
-							margin-right: 1em
-						.name
-							font-weight: 400
-						a
-							color: black
-							text-decoration: none
-							&:hover
-								text-decoration: underline
+                        h1
+                            font-weight: 300
+                        .person
+                            transition: background-color 0.5s
+                            margin-bottom: 2em
 
+                            &.highlight
+                                background-color: yellow
+                        .portrait
+                            height: 50px
+                            width: 50px
+                            display: inline-block
+                            background-size: cover
+                            border-radius: 50px
+                            float: left
+                            margin-right: 1em
+                        .name
+                            font-weight: 400
+                        a
+                            color: black
+                            text-decoration: none
+                            &:hover
+                                text-decoration: underline
 
-			body
-				h1 Personen
-				xsl:for-each(select="persons/person")
-					div.person
-						a.portrait(href="{website}" target="_blank" style='background-image: url(http://pd.zhaw.ch/portraet/images/{shortname}.jpg)')
-						div.name
-							xsl:value-of(select="name")
-						div.email
-							a(href="mailto:{email}")
-								xsl:value-of(select="email")
+                        #map
+                            height: 400px
+                            width: 100%
+                            margin-bottom: 2em
+
+                script(src="http://maps.googleapis.com/maps/api/js")
+                script(src="js/map.js")
+
+            body
+                h1 Personen
+                #map
+
+                xsl:for-each(select="persons/person")
+                    .person(data-location="{location}")
+                        a.portrait(href="{website}" target="_blank" style='background-image: url(http://pd.zhaw.ch/portraet/images/{shortname}.jpg)')
+                        .name
+                            xsl:value-of(select="name")
+                        .email
+                            a(href="mailto:{email}")
+                                xsl:value-of(select="email")

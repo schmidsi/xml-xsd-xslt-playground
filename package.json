@@ -19,6 +19,7 @@
   "devDependencies": {
     "coffee-script": "~1.8.0",
     "gulp": "^3.8.8",
+    "gulp-coffee": "^2.2.0",
     "gulp-jade": "^0.8.0",
     "gulp-rename": "^1.2.0",
     "libxmljs": "^0.12.0",

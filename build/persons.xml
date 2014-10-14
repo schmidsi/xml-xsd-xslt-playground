@@ -5,18 +5,21 @@
     <shortname>mino</shortname>
     <email>Clemente.Minonne@iProcess.ch</email>
     <website>https://www.xing.com/profile/Clemente_Minonne</website>
+    <location>Zürich</location>
   </person>
   <person>
     <website>https://www.linkedin.com/pub/alexandre-de-spindler/3/6a5/b32</website>
     <name>Alexandre de Spindler</name>
     <shortname>desa</shortname>
     <email>alexandre.despindler@fhnw.ch</email>
+    <location>Windisch</location>
   </person>
   <person>
     <name>Thomas Keller</name>
     <email>th@kellerzhaw.ch</email>
     <shortname>kell</shortname>
     <website>http://www.zhaw.ch/fileadmin/php_includes/popup/person-detail.php?kurzz=kell</website>
+    <location>Winterthur</location>
   </person>
   <person>
     <name>Judith Studer</name>

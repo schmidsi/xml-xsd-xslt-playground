@@ -13,7 +13,11 @@ h1 {
   font-weight: 300;
 }
 .person {
+  transition: background-color 0.5s;
   margin-bottom: 2em;
+}
+.person.highlight {
+  background-color: #ff0;
 }
 .portrait {
   height: 50px;
@@ -34,13 +38,21 @@ a {
 a:hover {
   text-decoration: underline;
 }
+#map {
+  height: 400px;
+  width: 100%;
+  margin-bottom: 2em;
+}
 
         </style>
+        <script src="http://maps.googleapis.com/maps/api/js"></script>
+        <script src="js/map.js"></script>
       </head>
       <body>
         <h1>Personen</h1>
+        <div id="map"></div>
         <xsl:for-each select="persons/person">
-          <div class="person"><a href="{website}" target="_blank" style="background-image: url(http://pd.zhaw.ch/portraet/images/{shortname}.jpg)" class="portrait"></a>
+          <div data-location="{location}" class="person"><a href="{website}" target="_blank" style="background-image: url(http://pd.zhaw.ch/portraet/images/{shortname}.jpg)" class="portrait"></a>
             <div class="name">
               <xsl:value-of select="name"></xsl:value-of>
             </div>

@@ -11,7 +11,11 @@ h1 {
   font-weight: 300;
 }
 .person {
+  transition: background-color 0.5s;
   margin-bottom: 2em;
+}
+.person.highlight {
+  background-color: #ff0;
 }
 .portrait {
   height: 50px;
@@ -32,24 +36,31 @@ a {
 a:hover {
   text-decoration: underline;
 }
+#map {
+  height: 400px;
+  width: 100%;
+  margin-bottom: 2em;
+}
 
         </style>
+<script src="http://maps.googleapis.com/maps/api/js"></script><script src="js/map.js"></script>
 </head>
 <body>
 <h1>Personen</h1>
-<div class="person">
+<div id="map"></div>
+<div data-location="Zürich" class="person">
 <a href="https://www.xing.com/profile/Clemente_Minonne" target="_blank" style="background-image: url(http://pd.zhaw.ch/portraet/images/mino.jpg)" class="portrait"></a><div class="name">Minonne Clemente</div>
 <div class="email"><a href="mailto:Clemente.Minonne@iProcess.ch">Clemente.Minonne@iProcess.ch</a></div>
 </div>
-<div class="person">
+<div data-location="Windisch" class="person">
 <a href="https://www.linkedin.com/pub/alexandre-de-spindler/3/6a5/b32" target="_blank" style="background-image: url(http://pd.zhaw.ch/portraet/images/desa.jpg)" class="portrait"></a><div class="name">Alexandre de Spindler</div>
 <div class="email"><a href="mailto:alexandre.despindler@fhnw.ch">alexandre.despindler@fhnw.ch</a></div>
 </div>
-<div class="person">
+<div data-location="Winterthur" class="person">
 <a href="http://www.zhaw.ch/fileadmin/php_includes/popup/person-detail.php?kurzz=kell" target="_blank" style="background-image: url(http://pd.zhaw.ch/portraet/images/kell.jpg)" class="portrait"></a><div class="name">Thomas Keller</div>
 <div class="email"><a href="mailto:th@kellerzhaw.ch">th@kellerzhaw.ch</a></div>
 </div>
-<div class="person">
+<div data-location="" class="person">
 <a href="asdf" target="_blank" style="background-image: url(http://pd.zhaw.ch/portraet/images/stuj.jpg)" class="portrait"></a><div class="name">Judith Studer</div>
 <div class="email"><a href="mailto:stuj@zhaw.ch">stuj@zhaw.ch</a></div>
 </div>

@@ -1,3 +1,4 @@
+coffee   = require 'gulp-coffee'
 fs       = require 'fs'
 gulp     = require 'gulp'
 jade     = require 'gulp-jade'
@@ -38,5 +39,12 @@ gulp.task 'xsl', ['jade'], ->
         else
             console.log 'created ./build/persons.html'
 
+gulp.task 'coffee', ->
+    return gulp.src('./src/script/*.coffee')
+        .pipe(coffee(bare=true))
+        .pipe(gulp.dest('./build/js/'))
+
+
 gulp.task 'default', ->
     gulp.watch './src/*.jade', ['jade', 'xsd', 'xsl']
+    gulp.watch './src/script/*.coffee', ['coffee']
