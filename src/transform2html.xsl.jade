@@ -6,7 +6,7 @@ xsl:stylesheet(
     xsl:template(match="/")
         html
             head
-                title dbC Projekt 1 Personen - Simon Schmid
+                title XML/XSD/XSL with jade, gulp and node.js example
                 link(href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css')
                 style
                     :stylus
@@ -47,14 +47,18 @@ xsl:stylesheet(
                 script(src="js/map.js")
 
             body
-                h1 Personen
+                h1 Persons
                 #map
 
                 xsl:for-each(select="persons/person")
                     .person(data-location="{location}")
-                        a.portrait(href="{website}" target="_blank" style='background-image: url(http://pd.zhaw.ch/portraet/images/{shortname}.jpg)')
+                        .portrait(style='background-image: url({picture})')
                         .name
                             xsl:value-of(select="name")
+                            |  (
+                            a(href="http://www.twitter.com/{twitter}" target="_blank")
+                                xsl:value-of(select="twitter")
+                            | )
                         .email
                             a(href="mailto:{email}")
                                 xsl:value-of(select="email")

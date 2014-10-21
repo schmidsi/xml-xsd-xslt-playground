@@ -3,7 +3,7 @@
   <xsl:template match="/">
     <html>
       <head>
-        <title>dbC Projekt 1 Personen - Simon Schmid</title>
+        <title>XML/XSD/XSL with jade, gulp and node.js example</title>
         <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet" type="text/css"></link>
         <style>html {
   font-family: 'Lato', sans-serif;
@@ -49,12 +49,14 @@ a:hover {
         <script src="js/map.js"></script>
       </head>
       <body>
-        <h1>Personen</h1>
+        <h1>Persons</h1>
         <div id="map"></div>
         <xsl:for-each select="persons/person">
-          <div data-location="{location}" class="person"><a href="{website}" target="_blank" style="background-image: url(http://pd.zhaw.ch/portraet/images/{shortname}.jpg)" class="portrait"></a>
+          <div data-location="{location}" class="person">
+            <div style="background-image: url({picture})" class="portrait"></div>
             <div class="name">
-              <xsl:value-of select="name"></xsl:value-of>
+              <xsl:value-of select="name"></xsl:value-of> (<a href="http://www.twitter.com/{twitter}" target="_blank">
+                <xsl:value-of select="twitter"></xsl:value-of></a>)
             </div>
             <div class="email"><a href="mailto:{email}">
                 <xsl:value-of select="email"></xsl:value-of></a></div>

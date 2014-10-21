@@ -1,31 +1,60 @@
 <?xml version="1.0" encoding="utf-8" ?>
+<!-- data from http://randomuser.me/-->
 <persons> 
   <person>
-    <name>Minonne Clemente</name>
-    <shortname>mino</shortname>
-    <email>Clemente.Minonne@iProcess.ch</email>
-    <website>https://www.xing.com/profile/Clemente_Minonne</website>
+    <name>Lewis Baker</name>
+    <shortname>leba</shortname>
+    <email>lewis.baker88@example.com</email>
+    <picture>http://api.randomuser.me/portraits/men/24.jpg</picture>
     <location>Zürich</location>
+    <twitter>@lew_baker</twitter>
   </person>
   <person>
-    <website>https://www.linkedin.com/pub/alexandre-de-spindler/3/6a5/b32</website>
-    <name>Alexandre de Spindler</name>
-    <shortname>desa</shortname>
-    <email>alexandre.despindler@fhnw.ch</email>
+    <name>Owen Hopkins</name>
+    <shortname>owho</shortname>
+    <email>owen.hopkins91@example.com</email>
+    <picture>http://api.randomuser.me/portraits/men/32.jpg</picture>
     <location>Windisch</location>
+    <twitter>@owen_hopkins</twitter>
   </person>
   <person>
-    <name>Thomas Keller</name>
-    <email>th@kellerzhaw.ch</email>
-    <shortname>kell</shortname>
-    <website>http://www.zhaw.ch/fileadmin/php_includes/popup/person-detail.php?kurzz=kell</website>
+    <name>Peggy Johnson</name>
+    <email>peggy.johnson75@example.com</email>
+    <shortname>pejo</shortname>
+    <picture>http://api.randomuser.me/portraits/women/56.jpg</picture>
     <location>Winterthur</location>
+    <twitter>@PeggyJ</twitter>
   </person>
   <person>
-    <name>Judith Studer</name>
-    <shortname>stuj</shortname>
-    <email>stuj@zhaw.ch</email>
-    <website>asdf</website>
+    <name>Felix Wright</name>
+    <shortname>fewr</shortname>
+    <email>felix.wright79@example.com</email>
+    <picture>http://api.randomuser.me/portraits/men/61.jpg</picture>
+    <twitter>@FelixWright22</twitter>
+  </person>
+  <person>
+    <name>Isobel Sims</name>
+    <shortname>issi</shortname>
+    <email>isobel.sims49@example.com</email>
+    <picture>http://api.randomuser.me/portraits/women/29.jpg</picture>
+    <location>Baden</location>
+    <twitter>@Simply_Simming</twitter>
+  </person>
+  <person>
+    <name>Lucy Meyer</name>
+    <shortname>lume</shortname>
+    <email>lucy.meyer22@example.com</email>
+    <picture>http://api.randomuser.me/portraits/women/88.jpg</picture>
+    <location>Adliswil</location>
+    <twitter>@lucymeyerunicef</twitter>
+  </person>
+  <person>
+    <name>Rebecca Reyes</name>
+    <shortname>rere</shortname>
+    <email>rebecca.reyes14@example.com</email>
+    <picture>http://api.randomuser.me/portraits/women/43.jpg</picture>
+    <location>Dübendorf</location>
+    <twitter>@thereyesreport</twitter>
   </person>
 </persons>
 <!--(xmlns="http://www.w3schools.com"-->

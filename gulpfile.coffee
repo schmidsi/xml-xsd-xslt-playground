@@ -45,6 +45,6 @@ gulp.task 'coffee', ->
         .pipe(gulp.dest('./build/js/'))
 
 
-gulp.task 'default', ->
+gulp.task 'default', ['jade', 'xsd', 'xsl', 'coffee'], ->
     gulp.watch './src/*.jade', ['jade', 'xsd', 'xsl']
     gulp.watch './src/script/*.coffee', ['coffee']

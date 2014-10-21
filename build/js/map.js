@@ -3,7 +3,7 @@
     var geocoder, index, map, person, props, _i, _len, _ref, _results;
     props = {
       center: new google.maps.LatLng(47.33693, 8.4576695),
-      zoom: 8,
+      zoom: 9,
       mapTypId: google.maps.MapTypeId.ROADMAP
     };
     map = new google.maps.Map(document.getElementById('map'), props);

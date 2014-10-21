@@ -1,7 +1,7 @@
 google.maps.event.addDomListener window, 'load', ->
     props = 
         center:   new google.maps.LatLng(47.33693,8.4576695)
-        zoom:     8
+        zoom:     9
         mapTypId: google.maps.MapTypeId.ROADMAP
 
     map = new google.maps.Map( document.getElementById('map'), props )
