@@ -79,6 +79,7 @@
                                 <xs:element name="text" type="xs:string"></xs:element>
                                 <xs:element name="timestamp" type="xs:dateTime"></xs:element>
                                 <xs:element name="contributor" type="xs:IDREF"></xs:element>
+                                <xs:element name="amount" type="xs:integer"></xs:element>
                               </xs:sequence>
                             </xs:complexType>
                           </xs:element>

@@ -1,6 +1,6 @@
 doctype xml
 xsl:stylesheet(
-    version="2.0"
+    version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
     
     xsl:key(name='pid' match='person' use='@id')
@@ -87,12 +87,20 @@ xsl:stylesheet(
                             background-color: rgba(152, 217, 182, 0.4)
                             padding: 0.5em
 
+                            .amount
+                                font-size: 0.75em
+                                color: grey
+                                margin-left: 0.2em
                             .timestamp
                                 float: right
                                 font-size: 0.5em
                                 color: #aaa
                             .minithumb
                                 float: right
+
+                        footer
+                            text-align: center
+                            font-size: 0.8em
 
                 script(src="http://maps.googleapis.com/maps/api/js")
                 script(src="build/js/map.js")
@@ -101,6 +109,10 @@ xsl:stylesheet(
                 xsl:apply-templates(select='persons')
                 hr
                 xsl:apply-templates(select='projects')
+
+                footer
+                    :markdown
+                        View the source on github: [github.com/schmidsi/xml-xsd-xslt-playground](https://github.com/schmidsi/xml-xsd-xslt-playground)
                 
 
     xsl:template(match="persons")
@@ -109,6 +121,7 @@ xsl:stylesheet(
 
         .persons
             xsl:for-each(select="person")
+                xsl:variable(name="id" select="@id")
                 .person(id="{@id}" data-location="{location}")
                     .portrait(style='background-image: url({picture})')
                     .name
@@ -117,14 +130,16 @@ xsl:stylesheet(
                         a(href="http://www.twitter.com/{twitter}" target="_blank")
                             xsl:value-of(select="twitter")
                         | )
+                        span.count
+                            xsl:value-of(select="sum(//contribution[contributor=$id]/amount)")
                     .email
                         a(href="mailto:{email}")
                             xsl:value-of(select="email")
                     .peers
-                        span peers:
                         xsl:for-each(select="peers/personRef")
                                 xsl:for-each(select="key('pid', @idref)")
                                     a.minithumb.right(href="#{@id}" style='background-image: url({picture})')
+                        br(clear="both")
 
     xsl:template(match="projects")
         h1.projects Projects
@@ -136,7 +151,7 @@ xsl:stylesheet(
                         i(class="fontawesome-{icon}") 
                         xsl:value-of(select="name")
                         .count
-                            xsl:value-of(select="count(contributions/contribution)")
+                            xsl:value-of(select="sum(contributions/contribution/amount)")
                     .members
                         xsl:for-each(select="members/personRef")
                             xsl:for-each(select="key('pid', @idref)")
@@ -148,6 +163,8 @@ xsl:stylesheet(
                             .contribution
                                 .text
                                     xsl:value-of(select="text")
+                                    span.amount
+                                        xsl:value-of(select="amount")
                                 xsl:for-each(select="key('pid', contributor)")
                                     a.minithumb(href="#{@id}" style='background-image: url({picture})')
                                 .timestamp

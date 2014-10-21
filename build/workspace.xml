@@ -91,6 +91,7 @@
       <icon>spinner</icon>
       <members>
         <personRef idref="p1"></personRef>
+        <personRef idref="p2"></personRef>
         <personRef idref="p3"></personRef>
         <personRef idref="p4"></personRef>
       </members>
@@ -99,11 +100,25 @@
           <text>I don't see any end!</text>
           <timestamp>2014-10-21T09:30:10.5</timestamp>
           <contributor>p1</contributor>
+          <amount>10</amount>
         </contribution>
         <contribution>
           <text>Is it possible to bring this *ç% project to an end? </text>
           <timestamp>2014-10-18T09:30:10.5</timestamp>
           <contributor>p3</contributor>
+          <amount>6</amount>
+        </contribution>
+        <contribution>
+          <text>OMG ☆</text>
+          <timestamp>2014-10-16T09:30:10.5</timestamp>
+          <contributor>p4</contributor>
+          <amount>7</amount>
+        </contribution>
+        <contribution>
+          <text>Please, I wanna leave this project</text>
+          <timestamp>2014-10-01T09:30:10.5</timestamp>
+          <contributor>p2</contributor>
+          <amount>2</amount>
         </contribution>
       </contributions>
     </project>
@@ -119,6 +134,13 @@
           <text>Just yeah!</text>
           <timestamp>2014-10-09T22:30:10.5</timestamp>
           <contributor>p6</contributor>
+          <amount>12</amount>
+        </contribution>
+        <contribution>
+          <text>I really like it!</text>
+          <timestamp>2014-09-18T09:30:10.5</timestamp>
+          <contributor>p3</contributor>
+          <amount>9</amount>
         </contribution>
       </contributions>
     </project>

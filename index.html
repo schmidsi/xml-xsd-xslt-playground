@@ -84,6 +84,11 @@ a:hover {
   background-color: rgba(152,217,182,0.4);
   padding: 0.5em;
 }
+.contribution .amount {
+  font-size: 0.75em;
+  color: #808080;
+  margin-left: 0.2em;
+}
 .contribution .timestamp {
   float: right;
   font-size: 0.5em;
@@ -91,6 +96,10 @@ a:hover {
 }
 .contribution .minithumb {
   float: right;
+}
+footer {
+  text-align: center;
+  font-size: 0.8em;
 }
 
         </style>
@@ -102,63 +111,63 @@ a:hover {
 <div class="persons">
 <div id="p1" data-location="Zürich" class="person">
 <div style="background-image: url(http://api.randomuser.me/portraits/men/24.jpg)" class="portrait"></div>
-<div class="name">Lewis Baker (<a href="http://www.twitter.com/@lew_baker" target="_blank">@lew_baker</a>)
-          </div>
+<div class="name">Lewis Baker (<a href="http://www.twitter.com/@lew_baker" target="_blank">@lew_baker</a>)<span class="count">10</span>
+</div>
 <div class="email"><a href="mailto:lewis.baker88@example.com">lewis.baker88@example.com</a></div>
 <div class="peers">
-<span>peers:</span><a href="#p2" style="background-image: url(http://api.randomuser.me/portraits/men/32.jpg)" class="minithumb right"></a><a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="minithumb right"></a>
+<a href="#p2" style="background-image: url(http://api.randomuser.me/portraits/men/32.jpg)" class="minithumb right"></a><a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="minithumb right"></a><br clear="both">
 </div>
 </div>
 <div id="p2" data-location="Windisch" class="person">
 <div style="background-image: url(http://api.randomuser.me/portraits/men/32.jpg)" class="portrait"></div>
-<div class="name">Owen Hopkins (<a href="http://www.twitter.com/@owen_hopkins" target="_blank">@owen_hopkins</a>)
-          </div>
+<div class="name">Owen Hopkins (<a href="http://www.twitter.com/@owen_hopkins" target="_blank">@owen_hopkins</a>)<span class="count">2</span>
+</div>
 <div class="email"><a href="mailto:owen.hopkins91@example.com">owen.hopkins91@example.com</a></div>
 <div class="peers">
-<span>peers:</span><a href="#p1" style="background-image: url(http://api.randomuser.me/portraits/men/24.jpg)" class="minithumb right"></a><a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="minithumb right"></a><a href="#p4" style="background-image: url(http://api.randomuser.me/portraits/men/61.jpg)" class="minithumb right"></a>
+<a href="#p1" style="background-image: url(http://api.randomuser.me/portraits/men/24.jpg)" class="minithumb right"></a><a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="minithumb right"></a><a href="#p4" style="background-image: url(http://api.randomuser.me/portraits/men/61.jpg)" class="minithumb right"></a><br clear="both">
 </div>
 </div>
 <div id="p3" data-location="Winterthur" class="person">
 <div style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="portrait"></div>
-<div class="name">Peggy Johnson (<a href="http://www.twitter.com/@PeggyJ" target="_blank">@PeggyJ</a>)
-          </div>
+<div class="name">Peggy Johnson (<a href="http://www.twitter.com/@PeggyJ" target="_blank">@PeggyJ</a>)<span class="count">15</span>
+</div>
 <div class="email"><a href="mailto:peggy.johnson75@example.com">peggy.johnson75@example.com</a></div>
 <div class="peers">
-<span>peers:</span><a href="#p5" style="background-image: url(http://api.randomuser.me/portraits/women/29.jpg)" class="minithumb right"></a>
+<a href="#p5" style="background-image: url(http://api.randomuser.me/portraits/women/29.jpg)" class="minithumb right"></a><br clear="both">
 </div>
 </div>
 <div id="p4" data-location="" class="person">
 <div style="background-image: url(http://api.randomuser.me/portraits/men/61.jpg)" class="portrait"></div>
-<div class="name">Felix Wright (<a href="http://www.twitter.com/@FelixWright22" target="_blank">@FelixWright22</a>)
-          </div>
+<div class="name">Felix Wright (<a href="http://www.twitter.com/@FelixWright22" target="_blank">@FelixWright22</a>)<span class="count">7</span>
+</div>
 <div class="email"><a href="mailto:felix.wright79@example.com">felix.wright79@example.com</a></div>
 <div class="peers">
-<span>peers:</span><a href="#p2" style="background-image: url(http://api.randomuser.me/portraits/men/32.jpg)" class="minithumb right"></a><a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="minithumb right"></a><a href="#p6" style="background-image: url(http://api.randomuser.me/portraits/women/88.jpg)" class="minithumb right"></a>
+<a href="#p2" style="background-image: url(http://api.randomuser.me/portraits/men/32.jpg)" class="minithumb right"></a><a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="minithumb right"></a><a href="#p6" style="background-image: url(http://api.randomuser.me/portraits/women/88.jpg)" class="minithumb right"></a><br clear="both">
 </div>
 </div>
 <div id="p5" data-location="Baden" class="person">
 <div style="background-image: url(http://api.randomuser.me/portraits/women/29.jpg)" class="portrait"></div>
-<div class="name">Isobel Sims (<a href="http://www.twitter.com/@Simply_Simming" target="_blank">@Simply_Simming</a>)
-          </div>
+<div class="name">Isobel Sims (<a href="http://www.twitter.com/@Simply_Simming" target="_blank">@Simply_Simming</a>)<span class="count">0</span>
+</div>
 <div class="email"><a href="mailto:isobel.sims49@example.com">isobel.sims49@example.com</a></div>
 <div class="peers">
-<span>peers:</span><a href="#p1" style="background-image: url(http://api.randomuser.me/portraits/men/24.jpg)" class="minithumb right"></a><a href="#p2" style="background-image: url(http://api.randomuser.me/portraits/men/32.jpg)" class="minithumb right"></a><a href="#p6" style="background-image: url(http://api.randomuser.me/portraits/women/88.jpg)" class="minithumb right"></a><a href="#p7" style="background-image: url(http://api.randomuser.me/portraits/women/43.jpg)" class="minithumb right"></a>
+<a href="#p1" style="background-image: url(http://api.randomuser.me/portraits/men/24.jpg)" class="minithumb right"></a><a href="#p2" style="background-image: url(http://api.randomuser.me/portraits/men/32.jpg)" class="minithumb right"></a><a href="#p6" style="background-image: url(http://api.randomuser.me/portraits/women/88.jpg)" class="minithumb right"></a><a href="#p7" style="background-image: url(http://api.randomuser.me/portraits/women/43.jpg)" class="minithumb right"></a><br clear="both">
 </div>
 </div>
 <div id="p6" data-location="Adliswil" class="person">
 <div style="background-image: url(http://api.randomuser.me/portraits/women/88.jpg)" class="portrait"></div>
-<div class="name">Lucy Meyer (<a href="http://www.twitter.com/@lucymeyerunicef" target="_blank">@lucymeyerunicef</a>)
-          </div>
+<div class="name">Lucy Meyer (<a href="http://www.twitter.com/@lucymeyerunicef" target="_blank">@lucymeyerunicef</a>)<span class="count">12</span>
+</div>
 <div class="email"><a href="mailto:lucy.meyer22@example.com">lucy.meyer22@example.com</a></div>
-<div class="peers"><span>peers:</span></div>
+<div class="peers"><br clear="both"></div>
 </div>
 <div id="p7" data-location="Dübendorf" class="person">
 <div style="background-image: url(http://api.randomuser.me/portraits/women/43.jpg)" class="portrait"></div>
-<div class="name">Rebecca Reyes (<a href="http://www.twitter.com/@thereyesreport" target="_blank">@thereyesreport</a>)
-          </div>
+<div class="name">Rebecca Reyes (<a href="http://www.twitter.com/@thereyesreport" target="_blank">@thereyesreport</a>)<span class="count">0</span>
+</div>
 <div class="email"><a href="mailto:rebecca.reyes14@example.com">rebecca.reyes14@example.com</a></div>
 <div class="peers">
-<span>peers:</span><a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="minithumb right"></a><a href="#p4" style="background-image: url(http://api.randomuser.me/portraits/men/61.jpg)" class="minithumb right"></a>
+<a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="minithumb right"></a><a href="#p4" style="background-image: url(http://api.randomuser.me/portraits/men/61.jpg)" class="minithumb right"></a><br clear="both">
 </div>
 </div>
 </div>
@@ -167,11 +176,13 @@ a:hover {
 <div class="projects">
 <div class="project">
 <h2>
-<i class="fontawesome-spinner"></i>The Never-ending Project<div class="count">2</div>
+<i class="fontawesome-spinner"></i>The Never-ending Project<div class="count">25</div>
 </h2>
 <div class="members">
 <div class="member">
 <a href="#p1" style="background-image: url(http://api.randomuser.me/portraits/men/24.jpg)" class="minithumb"></a>Lewis Baker</div>
+<div class="member">
+<a href="#p2" style="background-image: url(http://api.randomuser.me/portraits/men/32.jpg)" class="minithumb"></a>Owen Hopkins</div>
 <div class="member">
 <a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="minithumb"></a>Peggy Johnson</div>
 <div class="member">
@@ -179,20 +190,34 @@ a:hover {
 </div>
 <div class="contributions">
 <div class="contribution">
-<div class="text">I don't see any end!</div>
+<div class="text">I don't see any end!<span class="amount">10</span>
+</div>
 <a href="#p1" style="background-image: url(http://api.randomuser.me/portraits/men/24.jpg)" class="minithumb"></a><div class="timestamp">2014.10.21</div>
 <br clear="both">
 </div>
 <div class="contribution">
-<div class="text">Is it possible to bring this *ç% project to an end? </div>
+<div class="text">Is it possible to bring this *ç% project to an end? <span class="amount">6</span>
+</div>
 <a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="minithumb"></a><div class="timestamp">2014.10.18</div>
+<br clear="both">
+</div>
+<div class="contribution">
+<div class="text">OMG ☆<span class="amount">7</span>
+</div>
+<a href="#p4" style="background-image: url(http://api.randomuser.me/portraits/men/61.jpg)" class="minithumb"></a><div class="timestamp">2014.10.16</div>
+<br clear="both">
+</div>
+<div class="contribution">
+<div class="text">Please, I wanna leave this project<span class="amount">2</span>
+</div>
+<a href="#p2" style="background-image: url(http://api.randomuser.me/portraits/men/32.jpg)" class="minithumb"></a><div class="timestamp">2014.10.01</div>
 <br clear="both">
 </div>
 </div>
 </div>
 <div class="project">
 <h2>
-<i class="fontawesome-star"></i>The Awesome Project<div class="count">1</div>
+<i class="fontawesome-star"></i>The Awesome Project<div class="count">21</div>
 </h2>
 <div class="members">
 <div class="member">
@@ -200,11 +225,20 @@ a:hover {
 <div class="member">
 <a href="#p7" style="background-image: url(http://api.randomuser.me/portraits/women/43.jpg)" class="minithumb"></a>Rebecca Reyes</div>
 </div>
-<div class="contributions"><div class="contribution">
-<div class="text">Just yeah!</div>
+<div class="contributions">
+<div class="contribution">
+<div class="text">Just yeah!<span class="amount">12</span>
+</div>
 <a href="#p6" style="background-image: url(http://api.randomuser.me/portraits/women/88.jpg)" class="minithumb"></a><div class="timestamp">2014.10.09</div>
 <br clear="both">
-</div></div>
+</div>
+<div class="contribution">
+<div class="text">I really like it!<span class="amount">9</span>
+</div>
+<a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="minithumb"></a><div class="timestamp">2014.09.18</div>
+<br clear="both">
+</div>
+</div>
 </div>
 <div class="project">
 <h2>
@@ -214,5 +248,6 @@ a:hover {
 <div class="contributions"></div>
 </div>
 </div>
+<footer><p>View the source on github: <a href="https://github.com/schmidsi/xml-xsd-xslt-playground">github.com/schmidsi/xml-xsd-xslt-playground</a></p></footer>
 </body>
 </html>

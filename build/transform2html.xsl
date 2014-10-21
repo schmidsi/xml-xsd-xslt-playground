@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<xsl:stylesheet version="2.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
   <xsl:key name="pid" match="person" use="@id"></xsl:key>
   <xsl:template match="/workspace">
     <html>
@@ -87,6 +87,11 @@ a:hover {
   background-color: rgba(152,217,182,0.4);
   padding: 0.5em;
 }
+.contribution .amount {
+  font-size: 0.75em;
+  color: #808080;
+  margin-left: 0.2em;
+}
 .contribution .timestamp {
   float: right;
   font-size: 0.5em;
@@ -94,6 +99,10 @@ a:hover {
 }
 .contribution .minithumb {
   float: right;
+}
+footer {
+  text-align: center;
+  font-size: 0.8em;
 }
 
         </style>
@@ -104,6 +113,8 @@ a:hover {
         <xsl:apply-templates select="persons"></xsl:apply-templates>
         <hr></hr>
         <xsl:apply-templates select="projects"></xsl:apply-templates>
+        <footer><p>View the source on github: <a href="https://github.com/schmidsi/xml-xsd-xslt-playground">github.com/schmidsi/xml-xsd-xslt-playground</a></p>
+        </footer>
       </body>
     </html>
   </xsl:template>
@@ -112,18 +123,20 @@ a:hover {
     <div id="map"></div>
     <div class="persons">
       <xsl:for-each select="person">
+        <xsl:variable name="id" select="@id"></xsl:variable>
         <div id="{@id}" data-location="{location}" class="person">
           <div style="background-image: url({picture})" class="portrait"></div>
           <div class="name">
             <xsl:value-of select="name"></xsl:value-of> (<a href="http://www.twitter.com/{twitter}" target="_blank">
-              <xsl:value-of select="twitter"></xsl:value-of></a>)
+              <xsl:value-of select="twitter"></xsl:value-of></a>)<span class="count">
+              <xsl:value-of select="sum(//contribution[contributor=$id]/amount)"></xsl:value-of></span>
           </div>
           <div class="email"><a href="mailto:{email}">
               <xsl:value-of select="email"></xsl:value-of></a></div>
-          <div class="peers"><span>peers:</span>
+          <div class="peers">
             <xsl:for-each select="peers/personRef">
               <xsl:for-each select="key('pid', @idref)"><a href="#{@id}" style="background-image: url({picture})" class="minithumb right"></a></xsl:for-each>
-            </xsl:for-each>
+            </xsl:for-each><br clear="both"></br>
           </div>
         </div>
       </xsl:for-each>
@@ -137,7 +150,7 @@ a:hover {
           <h2><i class="fontawesome-{icon}"> </i>
             <xsl:value-of select="name"></xsl:value-of>
             <div class="count">
-              <xsl:value-of select="count(contributions/contribution)"></xsl:value-of>
+              <xsl:value-of select="sum(contributions/contribution/amount)"></xsl:value-of>
             </div>
           </h2>
           <div class="members">
@@ -153,7 +166,8 @@ a:hover {
             <xsl:for-each select="contributions/contribution">
               <div class="contribution">
                 <div class="text">
-                  <xsl:value-of select="text"></xsl:value-of>
+                  <xsl:value-of select="text"></xsl:value-of><span class="amount">
+                    <xsl:value-of select="amount"></xsl:value-of></span>
                 </div>
                 <xsl:for-each select="key('pid', contributor)"><a href="#{@id}" style="background-image: url({picture})" class="minithumb"></a></xsl:for-each>
                 <div class="timestamp">
