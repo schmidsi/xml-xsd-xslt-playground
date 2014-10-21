@@ -11,3 +11,7 @@ Here is the mighty feature list:
 - Small XML Database with Persons, Projects, Contributions to the projects
 - Fancy XPath sum() and count() expressions
 - Google Maps integration
+
+
+See the result:
+http://schmidsi.github.io/xml-xsd-xslt-playground/
