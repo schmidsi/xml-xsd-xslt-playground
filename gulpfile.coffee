@@ -15,10 +15,10 @@ gulp.task 'jade', ->
         .pipe gulp.dest './build/'
 
 gulp.task 'xsd', ['jade'], ->
-    fs.readFile './build/persons.xml', (err, data) ->
+    fs.readFile './build/workspace.xml', (err, data) ->
         xml = libxml.parseXml data.toString()
 
-        fs.readFile './build/persons.xsd', (err, data) ->
+        fs.readFile './build/workspace.xsd', (err, data) ->
             xsd = libxml.parseXml data.toString()
 
             xml.validate(xsd)
@@ -26,18 +26,18 @@ gulp.task 'xsd', ['jade'], ->
             if (xml.validationErrors.length > 0)
                 console.log(xml.validationErrors)
             else
-                console.log('./build/persons.xml', 'successfully validated')
+                console.log('./build/workspace.xml', 'successfully validated')
 
 gulp.task 'xsl', ['jade'], ->
     xsl  = xslt.readXsltFile('./build/transform2html.xsl')
-    xml  = xslt.readXmlFile('./build/persons.xml')
+    xml  = xslt.readXmlFile('./build/workspace.xml')
     html = xslt.transform(xsl, xml, [])
 
-    fs.writeFile './build/persons.html', html, (err) ->
+    fs.writeFile './index.html', html, (err) ->
         if err
             console.log err
         else
-            console.log 'created ./build/persons.html'
+            console.log 'created ./index.html'
 
 gulp.task 'coffee', ->
     return gulp.src('./src/script/*.coffee')

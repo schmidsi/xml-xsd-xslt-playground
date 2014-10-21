@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<workspace>
+  <!-- data from http://randomuser.me/-->
+  <persons> 
+    <person id="p1">
+      <name>Lewis Baker</name>
+      <shortname>leba</shortname>
+      <email>lewis.baker88@example.com</email>
+      <picture>http://api.randomuser.me/portraits/men/24.jpg</picture>
+      <location>Zürich</location>
+      <twitter>@lew_baker</twitter>
+      <peers>
+        <personRef idref="p2"></personRef>
+        <personRef idref="p3"></personRef>
+      </peers>
+    </person>
+    <person id="p2">
+      <name>Owen Hopkins</name>
+      <shortname>owho</shortname>
+      <email>owen.hopkins91@example.com</email>
+      <picture>http://api.randomuser.me/portraits/men/32.jpg</picture>
+      <location>Windisch</location>
+      <twitter>@owen_hopkins</twitter>
+      <peers>
+        <personRef idref="p1"></personRef>
+        <personRef idref="p3"></personRef>
+        <personRef idref="p4"></personRef>
+      </peers>
+    </person>
+    <person id="p3">
+      <name>Peggy Johnson</name>
+      <email>peggy.johnson75@example.com</email>
+      <shortname>pejo</shortname>
+      <picture>http://api.randomuser.me/portraits/women/56.jpg</picture>
+      <location>Winterthur</location>
+      <twitter>@PeggyJ</twitter>
+      <peers>
+        <personRef idref="p5"></personRef>
+      </peers>
+    </person>
+    <person id="p4">
+      <name>Felix Wright</name>
+      <shortname>fewr</shortname>
+      <email>felix.wright79@example.com</email>
+      <picture>http://api.randomuser.me/portraits/men/61.jpg</picture>
+      <twitter>@FelixWright22</twitter>
+      <peers>
+        <personRef idref="p2"></personRef>
+        <personRef idref="p3"></personRef>
+        <personRef idref="p6"></personRef>
+      </peers>
+    </person>
+    <person id="p5">
+      <name>Isobel Sims</name>
+      <shortname>issi</shortname>
+      <email>isobel.sims49@example.com</email>
+      <picture>http://api.randomuser.me/portraits/women/29.jpg</picture>
+      <location>Baden</location>
+      <twitter>@Simply_Simming</twitter>
+      <peers>
+        <personRef idref="p1"></personRef>
+        <personRef idref="p2"></personRef>
+        <personRef idref="p6"></personRef>
+        <personRef idref="p7"></personRef>
+      </peers>
+    </person>
+    <person id="p6">
+      <name>Lucy Meyer</name>
+      <shortname>lume</shortname>
+      <email>lucy.meyer22@example.com</email>
+      <picture>http://api.randomuser.me/portraits/women/88.jpg</picture>
+      <location>Adliswil</location>
+      <twitter>@lucymeyerunicef</twitter>
+    </person>
+    <person id="p7">
+      <name>Rebecca Reyes</name>
+      <shortname>rere</shortname>
+      <email>rebecca.reyes14@example.com</email>
+      <picture>http://api.randomuser.me/portraits/women/43.jpg</picture>
+      <location>Dübendorf</location>
+      <twitter>@thereyesreport</twitter>
+      <peers>
+        <personRef idref="p3"></personRef>
+        <personRef idref="p4"></personRef>
+      </peers>
+    </person>
+  </persons>
+</workspace>
+<!--(xmlns="http://www.w3schools.com"-->
+<!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->
+<!--xsi:schemaLocation="http://www.w3schools.com persons.xsd")-->

@@ -1,0 +1,77 @@
+doctype xml
+workspace
+	// data from http://randomuser.me/
+	persons 
+		person(id="p1")
+			name Lewis Baker
+			shortname leba
+			email lewis.baker88@example.com
+			picture http://api.randomuser.me/portraits/men/24.jpg
+			location Zürich
+			twitter @lew_baker
+			peers
+				personRef(idref="p2")
+				personRef(idref="p3")
+		person(id="p2")
+			name Owen Hopkins
+			shortname owho
+			email owen.hopkins91@example.com
+			picture http://api.randomuser.me/portraits/men/32.jpg
+			location Windisch
+			twitter @owen_hopkins
+			peers
+				personRef(idref="p1")
+				personRef(idref="p3")
+				personRef(idref="p4")
+		person(id="p3")
+			name Peggy Johnson
+			email peggy.johnson75@example.com
+			shortname pejo
+			picture http://api.randomuser.me/portraits/women/56.jpg
+			location Winterthur
+			twitter @PeggyJ
+			peers
+				personRef(idref="p5")
+		person(id="p4")
+			name Felix Wright
+			shortname fewr
+			email felix.wright79@example.com
+			picture http://api.randomuser.me/portraits/men/61.jpg
+			twitter @FelixWright22
+			peers
+				personRef(idref="p2")
+				personRef(idref="p3")
+				personRef(idref="p6")
+		person(id="p5")
+			name Isobel Sims
+			shortname issi
+			email isobel.sims49@example.com
+			picture http://api.randomuser.me/portraits/women/29.jpg
+			location Baden
+			twitter @Simply_Simming
+			peers
+				personRef(idref="p1")
+				personRef(idref="p2")
+				personRef(idref="p6")
+				personRef(idref="p7")
+		person(id="p6")
+			name Lucy Meyer
+			shortname lume
+			email lucy.meyer22@example.com
+			picture http://api.randomuser.me/portraits/women/88.jpg
+			location Adliswil
+			twitter @lucymeyerunicef
+		person(id="p7")
+			name Rebecca Reyes
+			shortname rere
+			email rebecca.reyes14@example.com
+			picture http://api.randomuser.me/portraits/women/43.jpg
+			location Dübendorf
+			twitter @thereyesreport
+			peers
+				personRef(idref="p3")
+				personRef(idref="p4")
+
+//(xmlns="http://www.w3schools.com"
+//xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+//xsi:schemaLocation="http://www.w3schools.com persons.xsd")

@@ -1,5 +1,5 @@
 {
-  "name": "dbC_Project_1",
+  "name": "xml-xsd-xslt-playground",
   "version": "0.1.0",
   "description": "XML, XSD and XSLT/XPath playground with gulp, jade, node.js",
   "main": "index.js",

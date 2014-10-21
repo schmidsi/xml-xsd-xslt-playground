@@ -2,8 +2,10 @@ doctype xml
 xsl:stylesheet(
     version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
+    
+    xsl:key(name='pid' match='person' use='@id')
 
-    xsl:template(match="/")
+    xsl:template(match="/workspace")
         html
             head
                 title XML/XSD/XSL with jade, gulp and node.js example
@@ -19,17 +21,26 @@ xsl:stylesheet(
                         .person
                             transition: background-color 0.5s
                             margin-bottom: 2em
+                            max-width: 350px
 
                             &.highlight
                                 background-color: yellow
                         .portrait
-                            height: 50px
-                            width: 50px
+                            height: 75px
+                            width: 75px
                             display: inline-block
                             background-size: cover
-                            border-radius: 50px
+                            border-radius: 75px
                             float: left
                             margin-right: 1em
+                        .peer
+                            height: 25px
+                            width: 25px
+                            display: inline-block
+                            background-size: cover
+                            border-radius: 25px
+                            float: right
+                            margin-right: 0.5em
                         .name
                             font-weight: 400
                         a
@@ -44,21 +55,31 @@ xsl:stylesheet(
                             margin-bottom: 2em
 
                 script(src="http://maps.googleapis.com/maps/api/js")
-                script(src="js/map.js")
+                script(src="build/js/map.js")
 
             body
-                h1 Persons
-                #map
+                xsl:apply-templates(select='persons')
+                
 
-                xsl:for-each(select="persons/person")
-                    .person(data-location="{location}")
-                        .portrait(style='background-image: url({picture})')
-                        .name
-                            xsl:value-of(select="name")
-                            |  (
-                            a(href="http://www.twitter.com/{twitter}" target="_blank")
-                                xsl:value-of(select="twitter")
-                            | )
-                        .email
-                            a(href="mailto:{email}")
-                                xsl:value-of(select="email")
+    xsl:template(match="persons")
+        h1 Persons
+        #map
+
+        .persons
+            xsl:for-each(select="person")
+                .person(id="{@id}" data-location="{location}")
+                    .portrait(style='background-image: url({picture})')
+                    .name
+                        xsl:value-of(select="name")
+                        |  (
+                        a(href="http://www.twitter.com/{twitter}" target="_blank")
+                            xsl:value-of(select="twitter")
+                        | )
+                    .email
+                        a(href="mailto:{email}")
+                            xsl:value-of(select="email")
+                    .peers
+                        span peers:
+                        xsl:for-each(select="peers/personRef")
+                                xsl:for-each(select="key('pid', @idref)")
+                                    a.peer(href="#{@id}" style='background-image: url({picture})')

@@ -13,18 +13,28 @@ h1 {
 .person {
   transition: background-color 0.5s;
   margin-bottom: 2em;
+  max-width: 350px;
 }
 .person.highlight {
   background-color: #ff0;
 }
 .portrait {
-  height: 50px;
-  width: 50px;
+  height: 75px;
+  width: 75px;
   display: inline-block;
   background-size: cover;
-  border-radius: 50px;
+  border-radius: 75px;
   float: left;
   margin-right: 1em;
+}
+.peer {
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  background-size: cover;
+  border-radius: 25px;
+  float: right;
+  margin-right: 0.5em;
 }
 .name {
   font-weight: 400;
@@ -43,52 +53,73 @@ a:hover {
 }
 
         </style>
-<script src="http://maps.googleapis.com/maps/api/js"></script><script src="js/map.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js"></script><script src="build/js/map.js"></script>
 </head>
 <body>
 <h1>Persons</h1>
 <div id="map"></div>
-<div data-location="Zürich" class="person">
+<div class="persons">
+<div id="p1" data-location="Zürich" class="person">
 <div style="background-image: url(http://api.randomuser.me/portraits/men/24.jpg)" class="portrait"></div>
 <div class="name">Lewis Baker (<a href="http://www.twitter.com/@lew_baker" target="_blank">@lew_baker</a>)
-            </div>
+          </div>
 <div class="email"><a href="mailto:lewis.baker88@example.com">lewis.baker88@example.com</a></div>
+<div class="peers">
+<span>peers:</span><a href="#p2" style="background-image: url(http://api.randomuser.me/portraits/men/32.jpg)" class="peer"></a><a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="peer"></a>
 </div>
-<div data-location="Windisch" class="person">
+</div>
+<div id="p2" data-location="Windisch" class="person">
 <div style="background-image: url(http://api.randomuser.me/portraits/men/32.jpg)" class="portrait"></div>
 <div class="name">Owen Hopkins (<a href="http://www.twitter.com/@owen_hopkins" target="_blank">@owen_hopkins</a>)
-            </div>
+          </div>
 <div class="email"><a href="mailto:owen.hopkins91@example.com">owen.hopkins91@example.com</a></div>
+<div class="peers">
+<span>peers:</span><a href="#p1" style="background-image: url(http://api.randomuser.me/portraits/men/24.jpg)" class="peer"></a><a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="peer"></a><a href="#p4" style="background-image: url(http://api.randomuser.me/portraits/men/61.jpg)" class="peer"></a>
 </div>
-<div data-location="Winterthur" class="person">
+</div>
+<div id="p3" data-location="Winterthur" class="person">
 <div style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="portrait"></div>
 <div class="name">Peggy Johnson (<a href="http://www.twitter.com/@PeggyJ" target="_blank">@PeggyJ</a>)
-            </div>
+          </div>
 <div class="email"><a href="mailto:peggy.johnson75@example.com">peggy.johnson75@example.com</a></div>
+<div class="peers">
+<span>peers:</span><a href="#p5" style="background-image: url(http://api.randomuser.me/portraits/women/29.jpg)" class="peer"></a>
 </div>
-<div data-location="" class="person">
+</div>
+<div id="p4" data-location="" class="person">
 <div style="background-image: url(http://api.randomuser.me/portraits/men/61.jpg)" class="portrait"></div>
 <div class="name">Felix Wright (<a href="http://www.twitter.com/@FelixWright22" target="_blank">@FelixWright22</a>)
-            </div>
+          </div>
 <div class="email"><a href="mailto:felix.wright79@example.com">felix.wright79@example.com</a></div>
+<div class="peers">
+<span>peers:</span><a href="#p2" style="background-image: url(http://api.randomuser.me/portraits/men/32.jpg)" class="peer"></a><a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="peer"></a><a href="#p6" style="background-image: url(http://api.randomuser.me/portraits/women/88.jpg)" class="peer"></a>
 </div>
-<div data-location="Baden" class="person">
+</div>
+<div id="p5" data-location="Baden" class="person">
 <div style="background-image: url(http://api.randomuser.me/portraits/women/29.jpg)" class="portrait"></div>
 <div class="name">Isobel Sims (<a href="http://www.twitter.com/@Simply_Simming" target="_blank">@Simply_Simming</a>)
-            </div>
+          </div>
 <div class="email"><a href="mailto:isobel.sims49@example.com">isobel.sims49@example.com</a></div>
+<div class="peers">
+<span>peers:</span><a href="#p1" style="background-image: url(http://api.randomuser.me/portraits/men/24.jpg)" class="peer"></a><a href="#p2" style="background-image: url(http://api.randomuser.me/portraits/men/32.jpg)" class="peer"></a><a href="#p6" style="background-image: url(http://api.randomuser.me/portraits/women/88.jpg)" class="peer"></a><a href="#p7" style="background-image: url(http://api.randomuser.me/portraits/women/43.jpg)" class="peer"></a>
 </div>
-<div data-location="Adliswil" class="person">
+</div>
+<div id="p6" data-location="Adliswil" class="person">
 <div style="background-image: url(http://api.randomuser.me/portraits/women/88.jpg)" class="portrait"></div>
 <div class="name">Lucy Meyer (<a href="http://www.twitter.com/@lucymeyerunicef" target="_blank">@lucymeyerunicef</a>)
-            </div>
+          </div>
 <div class="email"><a href="mailto:lucy.meyer22@example.com">lucy.meyer22@example.com</a></div>
+<div class="peers"><span>peers:</span></div>
 </div>
-<div data-location="Dübendorf" class="person">
+<div id="p7" data-location="Dübendorf" class="person">
 <div style="background-image: url(http://api.randomuser.me/portraits/women/43.jpg)" class="portrait"></div>
 <div class="name">Rebecca Reyes (<a href="http://www.twitter.com/@thereyesreport" target="_blank">@thereyesreport</a>)
-            </div>
+          </div>
 <div class="email"><a href="mailto:rebecca.reyes14@example.com">rebecca.reyes14@example.com</a></div>
+<div class="peers">
+<span>peers:</span><a href="#p3" style="background-image: url(http://api.randomuser.me/portraits/women/56.jpg)" class="peer"></a><a href="#p4" style="background-image: url(http://api.randomuser.me/portraits/men/61.jpg)" class="peer"></a>
+</div>
+</div>
 </div>
 </body>
 </html>
