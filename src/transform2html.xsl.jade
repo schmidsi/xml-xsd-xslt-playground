@@ -72,6 +72,15 @@ xsl:stylesheet(
                             .minithumb
                                 vertical-align: middle
 
+                        .count
+                            display: inline-block
+                            padding: 0 0.3em
+                            margin-left: 0.5em
+                            background-color: #aaa
+                            color: white
+                            border-radius: 1em
+                            font-size: 0.75em
+
                         .contribution
                             margin: 1em
                             border-radius: 25px
@@ -126,6 +135,8 @@ xsl:stylesheet(
                     h2
                         i(class="fontawesome-{icon}") 
                         xsl:value-of(select="name")
+                        .count
+                            xsl:value-of(select="count(contributions/contribution)")
                     .members
                         xsl:for-each(select="members/personRef")
                             xsl:for-each(select="key('pid', @idref)")

@@ -72,6 +72,15 @@ a:hover {
 .member .minithumb {
   vertical-align: middle;
 }
+.count {
+  display: inline-block;
+  padding: 0 0.3em;
+  margin-left: 0.5em;
+  background-color: #aaa;
+  color: #fff;
+  border-radius: 1em;
+  font-size: 0.75em;
+}
 .contribution {
   margin: 1em;
   border-radius: 25px;
@@ -127,6 +136,9 @@ a:hover {
         <div class="project">
           <h2><i class="fontawesome-{icon}"> </i>
             <xsl:value-of select="name"></xsl:value-of>
+            <div class="count">
+              <xsl:value-of select="count(contributions/contribution)"></xsl:value-of>
+            </div>
           </h2>
           <div class="members">
             <xsl:for-each select="members/personRef">
