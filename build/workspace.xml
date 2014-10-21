@@ -85,6 +85,50 @@
       </peers>
     </person>
   </persons>
+  <projects>
+    <project>
+      <name>The Never-ending Project</name>
+      <icon>spinner</icon>
+      <members>
+        <personRef idref="p1"></personRef>
+        <personRef idref="p3"></personRef>
+        <personRef idref="p4"></personRef>
+      </members>
+      <contributions>
+        <contribution>
+          <text>I don't see any end!</text>
+          <timestamp>2014-10-21T09:30:10.5</timestamp>
+          <contributor>p1</contributor>
+        </contribution>
+        <contribution>
+          <text>Is it possible to bring this *ç% project to an end? </text>
+          <timestamp>2014-10-18T09:30:10.5</timestamp>
+          <contributor>p3</contributor>
+        </contribution>
+      </contributions>
+    </project>
+    <project>
+      <name>The Awesome Project</name>
+      <icon>star</icon>
+      <members>
+        <personRef idref="p6"></personRef>
+        <personRef idref="p7"></personRef>
+      </members>
+      <contributions>
+        <contribution>
+          <text>Just yeah!</text>
+          <timestamp>2014-10-09T22:30:10.5</timestamp>
+          <contributor>p6</contributor>
+        </contribution>
+      </contributions>
+    </project>
+    <project>
+      <name>The lonely lab project </name>
+      <icon>beaker</icon>
+      <members></members>
+      <contributions></contributions>
+    </project>
+  </projects>
 </workspace>
 <!--(xmlns="http://www.w3schools.com"-->
 <!--xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"-->

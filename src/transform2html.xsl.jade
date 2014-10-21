@@ -1,6 +1,6 @@
 doctype xml
 xsl:stylesheet(
-    version="1.0"
+    version="2.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform")
     
     xsl:key(name='pid' match='person' use='@id')
@@ -10,14 +10,27 @@ xsl:stylesheet(
             head
                 title XML/XSD/XSL with jade, gulp and node.js example
                 link(href='http://fonts.googleapis.com/css?family=Lato:100,300,400' rel='stylesheet' type='text/css')
+                link(href='http://weloveiconfonts.com/api/?family=fontawesome' rel='stylesheet' type='text/css')
                 style
                     :stylus
+                        [class*="fontawesome-"]:before {
+                          font-style: normal
+                          font-family: 'FontAwesome', sans-serif;
+                          margin-right: 0.2em;
+                        }
+
+
                         html
                             font-family: 'Lato', sans-serif
                             font-weight: 300
 
                         h1
                             font-weight: 300
+                            &.projects
+                                margin-top: 1em
+                        hr
+                            border: none
+                            border-top: 1px solid #ddd
                         .person
                             transition: background-color 0.5s
                             margin-bottom: 2em
@@ -33,14 +46,15 @@ xsl:stylesheet(
                             border-radius: 75px
                             float: left
                             margin-right: 1em
-                        .peer
+                        .minithumb
                             height: 25px
                             width: 25px
                             display: inline-block
                             background-size: cover
                             border-radius: 25px
-                            float: right
                             margin-right: 0.5em
+                            &.right
+                                float: right
                         .name
                             font-weight: 400
                         a
@@ -54,11 +68,30 @@ xsl:stylesheet(
                             width: 100%
                             margin-bottom: 2em
 
+                        .member
+                            .minithumb
+                                vertical-align: middle
+
+                        .contribution
+                            margin: 1em
+                            border-radius: 25px
+                            background-color: rgba(152, 217, 182, 0.4)
+                            padding: 0.5em
+
+                            .timestamp
+                                float: right
+                                font-size: 0.5em
+                                color: #aaa
+                            .minithumb
+                                float: right
+
                 script(src="http://maps.googleapis.com/maps/api/js")
                 script(src="build/js/map.js")
 
             body
                 xsl:apply-templates(select='persons')
+                hr
+                xsl:apply-templates(select='projects')
                 
 
     xsl:template(match="persons")
@@ -82,4 +115,32 @@ xsl:stylesheet(
                         span peers:
                         xsl:for-each(select="peers/personRef")
                                 xsl:for-each(select="key('pid', @idref)")
-                                    a.peer(href="#{@id}" style='background-image: url({picture})')
+                                    a.minithumb.right(href="#{@id}" style='background-image: url({picture})')
+
+    xsl:template(match="projects")
+        h1.projects Projects
+        
+        .projects
+            xsl:for-each(select="project")
+                .project
+                    h2
+                        i(class="fontawesome-{icon}") 
+                        xsl:value-of(select="name")
+                    .members
+                        xsl:for-each(select="members/personRef")
+                            xsl:for-each(select="key('pid', @idref)")
+                                .member
+                                    a.minithumb(href="#{@id}" style='background-image: url({picture})')
+                                    xsl:value-of(select="name")
+                    .contributions
+                        xsl:for-each(select="contributions/contribution")
+                            .contribution
+                                .text
+                                    xsl:value-of(select="text")
+                                xsl:for-each(select="key('pid', contributor)")
+                                    a.minithumb(href="#{@id}" style='background-image: url({picture})')
+                                .timestamp
+                                    xsl:variable(name="ts" select="timestamp")
+                                    xsl:value-of(select="concat(substring($ts, 1, 4), '.',substring($ts, 6, 2), '.',substring($ts, 9, 2))")
+                                br(clear="both")
+

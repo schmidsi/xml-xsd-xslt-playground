@@ -51,6 +51,46 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="projects" maxOccurs="1">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="project" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="name" type="xs:string"></xs:element>
+                    <xs:element name="icon" type="xs:string"></xs:element>
+                    <xs:element name="members">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="personRef" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:attribute name="idref" type="xs:IDREF"></xs:attribute>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element name="contributions">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="contribution" minOccurs="0" maxOccurs="unbounded">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="text" type="xs:string"></xs:element>
+                                <xs:element name="timestamp" type="xs:dateTime"></xs:element>
+                                <xs:element name="contributor" type="xs:IDREF"></xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
