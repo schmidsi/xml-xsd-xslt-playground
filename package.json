@@ -1,21 +1,19 @@
 {
   "name": "dbC_Project_1",
   "version": "0.1.0",
-  "description": "XML, XSD and XSLT/XPath exercise at FHNW",
+  "description": "XML, XSD and XSLT/XPath playground with gulp, jade, node.js",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "keywords": [
     "fhnw",
     "xml",
     "xsd",
     "xslt",
     "xpath",
-    "jade"
+    "jade",
+    "gulp"
   ],
   "author": "Simon Schmid",
-  "license": "ISC",
+  "license": "CC BY 4.0",
   "devDependencies": {
     "coffee-script": "~1.8.0",
     "gulp": "^3.8.8",
